@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="../">Project Page</a>
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L.Tactics</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.Tactics.LTactics.html#"><span class="id" title="library">LTactics</span></a> <a class="idref" href="Undecidability.L.Tactics.GenEncode.html#"><span class="id" title="library">GenEncode</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <a id="sig" class="idref" href="#sig"><span class="id" title="section">sig</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Context</span> {<a id="A:1" class="idref" href="#A:1"><span class="id" title="binder">A</span></a> : <span class="id" title="keyword">Type</span>} {<a id="reg_A:2" class="idref" href="#reg_A:2"><span class="id" title="binder">reg_A</span></a> : <a class="idref" href="Undecidability.L.Tactics.Extract.html#encodable"><span class="id" title="class">encodable</span></a> <a class="idref" href="Complexity.L.Datatypes.LDepPair.html#A:1"><span class="id" title="variable">A</span></a>} {<a id="P:3" class="idref" href="#P:3"><span class="id" title="binder">P</span></a>: <a class="idref" href="Complexity.L.Datatypes.LDepPair.html#A:1"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="keyword">Prop</span>}.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Import</span> <span class="id" title="var">L_Notations</span>.<br/>
+
+<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Global Instance</span> <a id="encodable_sig" class="idref" href="#encodable_sig"><span class="id" title="instance">encodable_sig</span></a> : <a class="idref" href="Undecidability.L.Tactics.Extract.html#encodable"><span class="id" title="class">encodable</span></a>(<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#sig"><span class="id" title="inductive">sig</span></a> <a class="idref" href="Complexity.L.Datatypes.LDepPair.html#sig.P"><span class="id" title="variable">P</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span> <span class="id" title="keyword">using</span> <span class="id" title="var">reg_A</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<a class="idref" href="Undecidability.L.Tactics.Computable.html#registerAs"><span class="id" title="lemma">registerAs</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#proj1_sig"><span class="id" title="definition">proj1_sig</span></a> (<span class="id" title="var">P</span>:=<a class="idref" href="Complexity.L.Datatypes.LDepPair.html#sig.P"><span class="id" title="variable">P</span></a>))).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Defined</span>. 
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="enc_sig_eq" class="idref" href="#enc_sig_eq"><span class="id" title="lemma">enc_sig_eq</span></a> (<a id="x:4" class="idref" href="#x:4"><span class="id" title="binder">x</span></a>:<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#sig"><span class="id" title="inductive">sig</span></a> <a class="idref" href="Complexity.L.Datatypes.LDepPair.html#sig.P"><span class="id" title="variable">P</span></a>):<br/>
+&nbsp;&nbsp;<a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a> <a class="idref" href="Complexity.L.Datatypes.LDepPair.html#x:4"><span class="id" title="variable">x</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#proj1_sig"><span class="id" title="definition">proj1_sig</span></a> <a class="idref" href="Complexity.L.Datatypes.LDepPair.html#x:4"><span class="id" title="variable">x</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="enc_sig_exist_eq" class="idref" href="#enc_sig_exist_eq"><span class="id" title="lemma">enc_sig_exist_eq</span></a> <a id="x:5" class="idref" href="#x:5"><span class="id" title="binder">x</span></a> <a id="Hx:6" class="idref" href="#Hx:6"><span class="id" title="binder">Hx</span></a> :<br/>
+&nbsp;&nbsp;<a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#exist"><span class="id" title="constructor">exist</span></a> <a class="idref" href="Complexity.L.Datatypes.LDepPair.html#sig.P"><span class="id" title="variable">P</span></a> <a class="idref" href="Complexity.L.Datatypes.LDepPair.html#x:5"><span class="id" title="variable">x</span></a> <a class="idref" href="Complexity.L.Datatypes.LDepPair.html#Hx:6"><span class="id" title="variable">Hx</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a> <a class="idref" href="Complexity.L.Datatypes.LDepPair.html#x:5"><span class="id" title="variable">x</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Global Instance</span> <a id="termT_proj1_sig" class="idref" href="#termT_proj1_sig"><span class="id" title="instance">termT_proj1_sig</span></a> : <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">computableTime'</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#proj1_sig"><span class="id" title="definition">proj1_sig</span></a> (<span class="id" title="var">P</span>:=<a class="idref" href="Complexity.L.Datatypes.LDepPair.html#sig.P"><span class="id" title="variable">P</span></a>)<a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">)</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">fun</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">=&gt;</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(1,</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">tt</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">))</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Undecidability.L.Tactics.ComputableTactics.html#cast_computableTime"><span class="id" title="lemma">cast_computableTime</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Complexity.L.Datatypes.LDepPair.html#sig"><span class="id" title="section">sig</span></a>.<br/>
+
+<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

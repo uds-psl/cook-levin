@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="../">Project Page</a>
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.L.html#"><span class="id" title="library">L</span></a> <a class="idref" href="Undecidability.L.Tactics.LTactics.html#"><span class="id" title="library">Tactics.LTactics</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity.L.AbstractMachines</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.L.AbstractMachines.FunctionalDefinitions.html#"><span class="id" title="library">FunctionalDefinitions</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#"><span class="id" title="library">AbstractHeapMachineDef</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L.AbstractMachines</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.AbstractMachines.FlatPro.Programs.html#"><span class="id" title="library">Programs</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L.Datatypes</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.Datatypes.Lists.html#"><span class="id" title="library">Lists</span></a> <a class="idref" href="Undecidability.L.Datatypes.LOptions.html#"><span class="id" title="library">LOptions</span></a> <a class="idref" href="Undecidability.L.Datatypes.LProd.html#"><span class="id" title="library">LProd</span></a> <a class="idref" href="Undecidability.L.Datatypes.LTerm.html#"><span class="id" title="library">LTerm</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.Tactics.GenEncode.html#"><span class="id" title="library">Tactics.GenEncode</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab37"></a><h1 class="section">Computability in L</h1>
+
+<div class="paragraph"> </div>
+
+<a id="lab38"></a><h3 class="section">Encoding Heaps</h3>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Import</span> <span class="id" title="var">AbstractHeapMachineDef</span>.<br/>
+
+<br/>
+<span class="id" title="var">MetaCoq</span> <span class="id" title="var">Run</span> (<a class="idref" href="Undecidability.L.Tactics.GenEncode.html#tmGenEncode"><span class="id" title="definition">tmGenEncode</span></a> "heapEntry_enc" <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#heapEntry"><span class="id" title="inductive">heapEntry</span></a>).<br/>
+<span class="id" title="keyword">Hint Resolve</span> <span class="id" title="var">heapEntry_enc_correct</span> : <span class="id" title="var">Lrewrite</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Instance</span> <a id="term_heapEntryC" class="idref" href="#term_heapEntryC"><span class="id" title="instance">term_heapEntryC</span></a> : <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">computableTime'</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#heapEntryC"><span class="id" title="constructor">heapEntryC</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">fun</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">=&gt;</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(1,</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">fun</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">=&gt;</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(1,</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">tt</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">)))</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">extract</span> <span class="id" title="tactic">constructor</span>. <span class="id" title="var">solverec</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab39"></a><h3 class="section">Primitive functions with Heaps</h3>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Instance</span> <a id="term_get" class="idref" href="#term_get"><span class="id" title="instance">term_get</span></a> : <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">computableTime'</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#get"><span class="id" title="definition">get</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">fun</span></a> <a id="A:1" class="idref" href="#A:1"><span class="id" title="binder">A</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">=&gt;</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(1,</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">fun</span></a> <a id="n:2" class="idref" href="#n:2"><span class="id" title="binder">n</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">=&gt;</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">min</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">n</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">length</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">A</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">)*15+21,</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">tt</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">)))</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">extract</span>. <span class="id" title="var">solverec</span>. <span class="id" title="tactic">unfold</span> <a class="idref" href="Undecidability.L.Datatypes.List.List_nat.html#nth_error_time"><span class="id" title="definition">nth_error_time</span></a>, <a class="idref" href="Undecidability.L.Datatypes.List.List_nat.html#c__ntherror"><span class="id" title="definition">c__ntherror</span></a>. <span class="id" title="var">solverec</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <span class="id" title="var">Datatypes</span>.<br/>
+<span class="id" title="keyword">Instance</span> <a id="put_get" class="idref" href="#put_get"><span class="id" title="instance">put_get</span></a> : <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">computableTime'</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#put"><span class="id" title="definition">put</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">fun</span></a> <a id="A:3" class="idref" href="#A:3"><span class="id" title="binder">A</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">=&gt;</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(1,</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">fun</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">=&gt;</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">length</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">A</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">*</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">27</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">+</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">37,</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">tt</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">)))</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">extract</span>. <span class="id" title="var">solverec</span>. <span class="id" title="tactic">unfold</span> <a class="idref" href="Undecidability.L.Datatypes.List.List_basics.html#c__app"><span class="id" title="definition">c__app</span></a>, <a class="idref" href="Undecidability.L.Datatypes.List.List_nat.html#c__length"><span class="id" title="definition">c__length</span></a>. <span class="id" title="var">lia</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

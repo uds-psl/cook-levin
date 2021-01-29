@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="../">Project Page</a>
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L.Datatypes</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.Datatypes.LProd.html#"><span class="id" title="library">LProd</span></a> <a class="idref" href="Undecidability.L.Datatypes.LNat.html#"><span class="id" title="library">LNat</span></a> <a class="idref" href="Undecidability.L.Datatypes.LTerm.html#"><span class="id" title="library">LTerm</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <a id="largestVar" class="idref" href="#largestVar"><span class="id" title="definition">largestVar</span></a> (<a id="s:1" class="idref" href="#s:1"><span class="id" title="binder">s</span></a>:<a class="idref" href="Undecidability.L.L.html#term"><span class="id" title="inductive">term</span></a>) : <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#s:1"><span class="id" title="variable">s</span></a> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Undecidability.L.L.html#var"><span class="id" title="constructor">var</span></a> <span class="id" title="var">n</span> =&gt; <span class="id" title="var">n</span><br/>
+&nbsp;&nbsp;| <a class="idref" href="Undecidability.L.L.html#app"><span class="id" title="constructor">app</span></a> <span class="id" title="var">s</span> <span class="id" title="var">t</span> =&gt; <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Peano.html#max"><span class="id" title="abbreviation">max</span></a> (<a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#largestVar:2"><span class="id" title="definition">largestVar</span></a> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#s:1"><span class="id" title="variable">s</span></a>) (<a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#largestVar:2"><span class="id" title="definition">largestVar</span></a> <span class="id" title="var">t</span>)<br/>
+&nbsp;&nbsp;| <a class="idref" href="Undecidability.L.L.html#lam"><span class="id" title="constructor">lam</span></a> <span class="id" title="var">s</span> =&gt; <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#largestVar:2"><span class="id" title="definition">largestVar</span></a> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#s:1"><span class="id" title="variable">s</span></a><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="largestVar_prod" class="idref" href="#largestVar_prod"><span class="id" title="lemma">largestVar_prod</span></a> <a id="X:4" class="idref" href="#X:4"><span class="id" title="binder">X</span></a> <a id="Y:5" class="idref" href="#Y:5"><span class="id" title="binder">Y</span></a> `{<a id="Rx:6" class="idref" href="#Rx:6"><span class="id" title="binder">Rx</span></a> : <a class="idref" href="Undecidability.L.Tactics.Extract.html#encodable"><span class="id" title="class">encodable</span></a> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#X:4"><span class="id" title="variable">X</span></a>} {<a id="Ry:7" class="idref" href="#Ry:7"><span class="id" title="binder">Ry</span></a> : <a class="idref" href="Undecidability.L.Tactics.Extract.html#encodable"><span class="id" title="class">encodable</span></a> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#Y:5"><span class="id" title="variable">Y</span></a>} (<a id="w:8" class="idref" href="#w:8"><span class="id" title="binder">w</span></a>:<a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#X:4"><span class="id" title="variable">X</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">*</span></a><a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#Y:5"><span class="id" title="variable">Y</span></a>):<br/>
+&nbsp;&nbsp;<a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#largestVar"><span class="id" title="definition">largestVar</span></a> (<a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#w:8"><span class="id" title="variable">w</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Peano.html#max"><span class="id" title="abbreviation">max</span></a> (<a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#largestVar"><span class="id" title="definition">largestVar</span></a> (<a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#fst"><span class="id" title="definition">fst</span></a> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#w:8"><span class="id" title="variable">w</span></a>))) (<a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#largestVar"><span class="id" title="definition">largestVar</span></a> (<a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#snd"><span class="id" title="definition">snd</span></a> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#w:8"><span class="id" title="variable">w</span></a>))).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">w</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a>. <span class="id" title="tactic">destruct</span> <span class="id" title="var">Rx</span>,<span class="id" title="var">Ry</span>. <span class="id" title="var">cbn</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Lemma</span> <a id="largestVar_nat" class="idref" href="#largestVar_nat"><span class="id" title="lemma">largestVar_nat</span></a> (<a id="n:9" class="idref" href="#n:9"><span class="id" title="binder">n</span></a>:<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>):<br/>
+&nbsp;&nbsp;<a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#largestVar"><span class="id" title="definition">largestVar</span></a> (<a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#n:9"><span class="id" title="variable">n</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Peano.html#cb53cf0ee22c036a03b4a9281c68b5a3"><span class="id" title="notation">&lt;=</span></a> 1.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a>,<a class="idref" href="Undecidability.L.Datatypes.LNat.html#encodable_nat_enc"><span class="id" title="definition">encodable_nat_enc</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">n</span>;<span class="id" title="var">cbn</span> <span class="id" title="tactic">in</span> *. <span class="id" title="var">all</span>:<span class="id" title="var">Lia.lia</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Lemma</span> <a id="largestVar_term" class="idref" href="#largestVar_term"><span class="id" title="lemma">largestVar_term</span></a> (<a id="s:10" class="idref" href="#s:10"><span class="id" title="binder">s</span></a>:<a class="idref" href="Undecidability.L.L.html#term"><span class="id" title="inductive">term</span></a>):<br/>
+&nbsp;&nbsp;<a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#largestVar"><span class="id" title="definition">largestVar</span></a> (<a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#s:10"><span class="id" title="variable">s</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Peano.html#cb53cf0ee22c036a03b4a9281c68b5a3"><span class="id" title="notation">&lt;=</span></a> 2.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Undecidability.L.Tactics.Extract.html#enc"><span class="id" title="method">enc</span></a>,<a class="idref" href="Undecidability.L.Datatypes.LTerm.html#encodable_term_enc"><span class="id" title="definition">encodable_term_enc</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">s</span>;<span class="id" title="var">cbn</span> -[<span class="id" title="var">max</span>] <span class="id" title="tactic">in</span> *.<br/>
+&nbsp;&nbsp;1:<span class="id" title="tactic">rewrite</span> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#largestVar_nat"><span class="id" title="lemma">largestVar_nat</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">all</span>:<span class="id" title="tactic">try</span> <span class="id" title="var">Lia.lia</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="largestVar_size" class="idref" href="#largestVar_size"><span class="id" title="lemma">largestVar_size</span></a> <a id="s:11" class="idref" href="#s:11"><span class="id" title="binder">s</span></a> :<br/>
+&nbsp;&nbsp;<a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#largestVar"><span class="id" title="definition">largestVar</span></a> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#s:11"><span class="id" title="variable">s</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Peano.html#cb53cf0ee22c036a03b4a9281c68b5a3"><span class="id" title="notation">&lt;=</span></a> <a class="idref" href="Undecidability.L.Util.L_facts.html#size"><span class="id" title="definition">size</span></a> <a class="idref" href="Undecidability.L.AbstractMachines.LargestVar.html#s:11"><span class="id" title="variable">s</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">s</span>;<span class="id" title="var">cbn</span>;<span class="id" title="var">Lia.lia</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

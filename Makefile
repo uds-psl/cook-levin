@@ -1,21 +1,10 @@
 all: Makefile.coq
 	$(MAKE) -f Makefile.coq all
 
-depsopam:
-	opam repo add coq-released https://coq.inria.fr/opam/released
-	opam pin add -y coq-library-undecidability https://github.com/fakusb/coq-library-undecidability.git#7033c536b9d9a89214c57082dcf20f00002f48d2
-	opam install . --deps-only
 
-VFILES_LIB_UNDEC = $(shell grep -P '^(TM|(L(?!\/Reductions\/)))(\/[^\/\s]+)*\.v' coq-library-undecidability/theories/_CoqProject 2> /dev/null)
-
-VOFILES_LIB_UNDEC := $(VFILES_LIB_UNDEC:=o)
-
-depssubmodule:
+deps:
 	git submodule update  
 	opam install ./coq-library-undecidability --deps-only
-	$(MAKE) -C coq-library-undecidability/theories -f Makefile Makefile.coq
-	$(MAKE) -C coq-library-undecidability/theories -f Makefile.coq only TGTS="$(VOFILES_LIB_UNDEC)"
-
 
 html: Makefile.coq
 	$(MAKE) -f Makefile.coq html
@@ -33,13 +22,10 @@ realclean: Makefile.coq clean
 
 clean: Makefile.coq
 	$(MAKE) -f Makefile.coq clean
-	rm -f Makefile.coq Makefile.coq.conf $(TMP_COQPROJECT)
-
-TMP_COQPROJECT := "._CoqProject.tmp"
+	rm -f Makefile.coq Makefile.coq.conf
 
 Makefile.coq: _CoqProject
-	./adjustCoqProject.sh $(TMP_COQPROJECT)
-	coq_makefile -f $(TMP_COQPROJECT) -o Makefile.coq
+	coq_makefile -f _CoqProject -o Makefile.coq
 
 .PHONY: all install html clean
 

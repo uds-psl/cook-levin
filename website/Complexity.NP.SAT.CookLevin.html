@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="../">Project Page</a>
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L.Tactics</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.Tactics.LTactics.html#"><span class="id" title="library">LTactics</span></a> <a class="idref" href="Undecidability.L.Tactics.GenEncode.html#"><span class="id" title="library">GenEncode</span></a> <a class="idref" href="Undecidability.L.Tactics.Computable.html#"><span class="id" title="library">Computable</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span>  <a class="idref" href="Undecidability.L.Functions.FinTypeLookup.html#"><span class="id" title="library">FinTypeLookup</span></a> <a class="idref" href="Undecidability.L.Datatypes.LFinType.html#"><span class="id" title="library">LFinType</span></a> <a class="idref" href="Undecidability.L.Datatypes.LSum.html#"><span class="id" title="library">LSum</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.Shared.Libs.PSL</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">FinTypes</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity.NP</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT_to_SAT.html#"><span class="id" title="library">FSAT_to_SAT</span></a> <a class="idref" href="Complexity.NP.SAT.kSAT_to_SAT.html#"><span class="id" title="library">kSAT_to_SAT</span></a> <a class="idref" href="Complexity.NP.Clique.kSAT_to_FlatClique.html#"><span class="id" title="library">kSAT_to_FlatClique</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity.NP.SAT.CookLevin.Subproblems</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.FlatCC.html#"><span class="id" title="library">FlatCC</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.SingleTMGenNP.html#"><span class="id" title="library">SingleTMGenNP</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.BinaryCC.html#"><span class="id" title="library">BinaryCC</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity.NP.SAT.CookLevin.Subproblems</span> <span class="id" title="keyword">Require</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.FlatTCC.html#"><span class="id" title="library">FlatTCC</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity.NP</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.NP.SAT.SAT.html#"><span class="id" title="library">SAT</span></a> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#"><span class="id" title="library">FSAT</span></a> <a class="idref" href="Complexity.NP.SAT.kSAT.html#"><span class="id" title="library">kSAT</span></a> <a class="idref" href="Complexity.NP.Clique.FlatClique.html#"><span class="id" title="library">FlatClique</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity.NP.SAT.CookLevin</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.Reductions.FlatSingleTMGenNP_to_FlatTCC.html#"><span class="id" title="library">FlatSingleTMGenNP_to_FlatTCC</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.Reductions.FlatTCC_to_FlatCC.html#"><span class="id" title="library">FlatTCC_to_FlatCC</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.Reductions.FlatCC_to_BinaryCC.html#"><span class="id" title="library">FlatCC_to_BinaryCC</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.Reductions.BinaryCC_to_FSAT.html#"><span class="id" title="library">BinaryCC_to_FSAT</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.Reductions.TMGenNP_fixed_singleTapeTM_to_FlatFunSingleTMGenNP.html#"><span class="id" title="library">Complexity.NP.SAT.CookLevin.Reductions.TMGenNP_fixed_singleTapeTM_to_FlatFunSingleTMGenNP</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity.NP.TM</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.NP.TM.IntermediateProblems.html#"><span class="id" title="library">IntermediateProblems</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.TM</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.TM.Util.TM_facts.html#"><span class="id" title="library">TM_facts</span></a> <a class="idref" href="Undecidability.TM.Code.CodeTM.html#"><span class="id" title="library">CodeTM</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.NP.TM.L_to_LM.html#"><span class="id" title="library">L_to_LM</span></a> <a class="idref" href="Complexity.NP.TM.LM_to_mTM.html#"><span class="id" title="library">LM_to_mTM</span></a> <a class="idref" href="Complexity.NP.TM.mTM_to_singleTapeTM.html#"><span class="id" title="library">mTM_to_singleTapeTM</span></a> <a class="idref" href="Complexity.NP.TM.TMGenNP_fixed_mTM.html#"><span class="id" title="library">TMGenNP_fixed_mTM</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.Prelim.MoreList.html#"><span class="id" title="library">Prelim.MoreList</span></a> <a class="idref" href="Undecidability.L.Prelim.MoreBase.html#"><span class="id" title="library">Prelim.MoreBase</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity.Complexity</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.Complexity.NP.html#"><span class="id" title="library">NP</span></a> <a class="idref" href="Complexity.Complexity.Definitions.html#"><span class="id" title="library">Definitions</span></a> <a class="idref" href="Complexity.Complexity.Subtypes.html#"><span class="id" title="library">Subtypes</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity.NP</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.NP.L.GenNP.html#"><span class="id" title="library">GenNP</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity</span> <span class="id" title="keyword">Require</span> <a class="idref" href="Complexity.NP.L.GenNP_is_hard.html#"><span class="id" title="library">GenNP_is_hard</span></a> <a class="idref" href="Complexity.NP.L.CanEnumTerm.html#"><span class="id" title="library">CanEnumTerm</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab72"></a><h1 class="section">Overview of the results proved in the paper.</h1>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Import</span> <span class="id" title="var">LNat</span>.<br/>
+<span class="id" title="keyword">Lemma</span> <a id="GenNP_to_LMGenNP" class="idref" href="#GenNP_to_LMGenNP"><span class="id" title="lemma">GenNP_to_LMGenNP</span></a> :<br/>
+&nbsp;&nbsp;<a class="idref" href="Complexity.NP.L.GenNP.html#GenNP"><span class="id" title="definition">GenNP</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#bool"><span class="id" title="inductive">bool</span></a>) <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.L.LMGenNP.html#LMGenNP"><span class="id" title="definition">LMGenNP.LMGenNP</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#bool"><span class="id" title="inductive">bool</span></a>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.TM.L_to_LM.html#GenNP_to_LMGenNP"><span class="id" title="lemma">GenNP_to_LMGenNP</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="LMGenNP_to_TMGenNP" class="idref" href="#LMGenNP_to_TMGenNP"><span class="id" title="lemma">LMGenNP_to_TMGenNP</span></a> :<br/>
+&nbsp;&nbsp;<a class="idref" href="Complexity.NP.L.LMGenNP.html#LMGenNP"><span class="id" title="definition">LMGenNP.LMGenNP</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#bool"><span class="id" title="inductive">bool</span></a>) <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.TM.TMGenNP_fixed_mTM.html#mTMGenNP_fixed"><span class="id" title="definition">mTMGenNP_fixed</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#projT1"><span class="id" title="definition">projT1</span></a> <a class="idref" href="Complexity.NP.TM.LM_to_mTM.html#M.M"><span class="id" title="definition">M.M</span></a>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.TM.LM_to_mTM.html#LMGenNP_to_TMGenNP_mTM"><span class="id" title="lemma">LMGenNP_to_TMGenNP_mTM</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="TMGenNP_to_TMGenNP_fixed_singleTapeTM" class="idref" href="#TMGenNP_to_TMGenNP_fixed_singleTapeTM"><span class="id" title="lemma">TMGenNP_to_TMGenNP_fixed_singleTapeTM</span></a> : <br/>
+&nbsp;&nbsp;<a class="idref" href="Complexity.NP.TM.TMGenNP_fixed_mTM.html#mTMGenNP_fixed"><span class="id" title="definition">mTMGenNP_fixed</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#projT1"><span class="id" title="definition">projT1</span></a> <a class="idref" href="Complexity.NP.TM.LM_to_mTM.html#M.M"><span class="id" title="definition">M.M</span></a>) <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.TM.TMGenNP_fixed_mTM.html#TMGenNP_fixed"><span class="id" title="definition">TMGenNP_fixed</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#projT1"><span class="id" title="definition">projT1</span></a> (<a class="idref" href="Complexity.NP.TM.M_multi2mono.html#M__mono"><span class="id" title="definition">M_multi2mono.M__mono</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#projT1"><span class="id" title="definition">projT1</span></a> <a class="idref" href="Complexity.NP.TM.LM_to_mTM.html#M.M"><span class="id" title="definition">M.M</span></a>))).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.TM.mTM_to_singleTapeTM.html#TMGenNP_mTM_to_TMGenNP_singleTM"><span class="id" title="lemma">TMGenNP_mTM_to_TMGenNP_singleTM</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <span class="id" title="var">Specif</span>.<br/>
+<span class="id" title="keyword">Lemma</span> <a id="fixedTM_to_FlatSingleTMGenNP" class="idref" href="#fixedTM_to_FlatSingleTMGenNP"><span class="id" title="lemma">fixedTM_to_FlatSingleTMGenNP</span></a> (<a id="sig:1" class="idref" href="#sig:1"><span class="id" title="binder">sig</span></a> : <span class="id" title="record">finType</span>) (<a id="M:2" class="idref" href="#M:2"><span class="id" title="binder">M</span></a> : <a class="idref" href="Undecidability.TM.TM.html#TM"><span class="id" title="record">TM</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#sig:1"><span class="id" title="variable">sig</span></a> 1)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="reg__sig:3" class="idref" href="#reg__sig:3"><span class="id" title="binder">reg__sig</span></a> : <a class="idref" href="Undecidability.L.Tactics.Extract.html#encodable"><span class="id" title="class">encodable</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#sig:1"><span class="id" title="variable">sig</span></a>) (<a id="index__comp:5" class="idref" href="#index__comp:5"><span class="id" title="binder">index__comp</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#e6a434cae860987d1c5f61b342cc9e57"><span class="id" title="notation">{</span></a><a id="c:4" class="idref" href="#c:4"><span class="id" title="binder">c</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#e6a434cae860987d1c5f61b342cc9e57"><span class="id" title="notation">&amp;</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">computableTime'</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(</span></a><span class="id" title="definition">index</span> (<span class="id" title="var">F</span>:=<a class="idref" href="Complexity.NP.SAT.CookLevin.html#sig:1"><span class="id" title="variable">sig</span></a>)<a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">)</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">fun</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">_</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">=&gt;</span></a> <a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">(</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">c</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">,</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">tt</span></a><a class="idref" href="Undecidability.L.Tactics.ComputableTime.html#:::'computableTime'''_x"><span class="id" title="notation">))</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#e6a434cae860987d1c5f61b342cc9e57"><span class="id" title="notation">}</span></a>):<br/>
+&nbsp;&nbsp;<a class="idref" href="Complexity.NP.TM.TMGenNP_fixed_mTM.html#TMGenNP_fixed"><span class="id" title="definition">TMGenNP_fixed</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#M:2"><span class="id" title="variable">M</span></a> <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.SingleTMGenNP.html#Complexity.NP.SAT.CookLevin.FlatSingleTMGenNP"><span class="id" title="definition">FlatSingleTMGenNP</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_transitive"><span class="id" title="lemma">reducesPolyMO_transitive</span></a> <span class="id" title="keyword">with</span> (<span class="id" title="var">Q</span> := <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.SingleTMGenNP.html#Complexity.NP.SAT.CookLevin.FlatFunSingleTMGenNP"><span class="id" title="definition">FlatFunSingleTMGenNP</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<a class="idref" href="Complexity.NP.SAT.CookLevin.Reductions.TMGenNP_fixed_singleTapeTM_to_FlatFunSingleTMGenNP.html#Complexity.NP.SAT.CookLevin.TMGenNP_fixed_singleTapeTM_to_FlatFunSingleTMGenNP"><span class="id" title="lemma">TMGenNP_fixed_singleTapeTM_to_FlatFunSingleTMGenNP</span></a> <span class="id" title="var">M</span>). <span class="id" title="var">eassumption</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_intro"><span class="id" title="constructor">reducesPolyMO_intro</span></a> <span class="id" title="keyword">with</span> (<span class="id" title="var">f</span> := <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a>).<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">exists</span> (<span class="id" title="keyword">fun</span> <span class="id" title="var">_</span> =&gt; 1).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="var">extract</span>. <span class="id" title="var">solverec</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="var">smpl_inO</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="var">smpl_inO</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">exists</span> (<span class="id" title="keyword">fun</span> <a id="n:7" class="idref" href="#n:7"><span class="id" title="binder">n</span></a> =&gt; <a class="idref" href="Complexity.NP.SAT.CookLevin.html#n:6"><span class="id" title="variable">n</span></a>). 2, 3: <span class="id" title="var">smpl_inO</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span>. <span class="id" title="var">now</span> <span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">intros</span> (((? &amp; ?) &amp; ?) &amp; ?). <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.SingleTMGenNP.html#Complexity.NP.SAT.CookLevin.FlatFunSingleTMGenNP_FlatSingleTMGenNP_equiv"><span class="id" title="lemma">FlatFunSingleTMGenNP_FlatSingleTMGenNP_equiv</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Corollary</span> <a id="GenNP_to_SingleTMGenNP" class="idref" href="#GenNP_to_SingleTMGenNP"><span class="id" title="lemma">GenNP_to_SingleTMGenNP</span></a> : <br/>
+&nbsp;&nbsp;<a class="idref" href="Complexity.NP.L.GenNP.html#GenNP"><span class="id" title="definition">GenNP</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#bool"><span class="id" title="inductive">bool</span></a>) <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.SingleTMGenNP.html#Complexity.NP.SAT.CookLevin.FlatSingleTMGenNP"><span class="id" title="definition">FlatSingleTMGenNP</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_transitive"><span class="id" title="lemma">reducesPolyMO_transitive</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#GenNP_to_LMGenNP"><span class="id" title="lemma">GenNP_to_LMGenNP</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_transitive"><span class="id" title="lemma">reducesPolyMO_transitive</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#LMGenNP_to_TMGenNP"><span class="id" title="lemma">LMGenNP_to_TMGenNP</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_transitive"><span class="id" title="lemma">reducesPolyMO_transitive</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#TMGenNP_to_TMGenNP_fixed_singleTapeTM"><span class="id" title="lemma">TMGenNP_to_TMGenNP_fixed_singleTapeTM</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#fixedTM_to_FlatSingleTMGenNP"><span class="id" title="lemma">fixedTM_to_FlatSingleTMGenNP</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Undecidability.L.Functions.FinTypeLookup.html#finFun_computableTime_const"><span class="id" title="lemma">finFun_computableTime_const</span></a>. 2:<span class="id" title="tactic">exact</span> 0.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">_</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+reduction from TM to SAT 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <a id="FlatSingleTMGenNP_to_FlatTCC" class="idref" href="#FlatSingleTMGenNP_to_FlatTCC"><span class="id" title="lemma">FlatSingleTMGenNP_to_FlatTCC</span></a> : <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.SingleTMGenNP.html#Complexity.NP.SAT.CookLevin.FlatSingleTMGenNP"><span class="id" title="definition">FlatSingleTMGenNP</span></a> <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.FlatTCC.html#Complexity.NP.SAT.CookLevin.FlatTCCLang"><span class="id" title="definition">FlatTCC.FlatTCCLang</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="tactic">exact</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.Reductions.FlatSingleTMGenNP_to_FlatTCC.html#Complexity.NP.SAT.CookLevin.FlatSingleTMGenNP_to_FlatTCCLang_poly"><span class="id" title="lemma">FlatSingleTMGenNP_to_FlatTCCLang_poly</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="FlatTCC_to_FlatCC" class="idref" href="#FlatTCC_to_FlatCC"><span class="id" title="lemma">FlatTCC_to_FlatCC</span></a> : <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.FlatTCC.html#Complexity.NP.SAT.CookLevin.FlatTCCLang"><span class="id" title="definition">FlatTCC.FlatTCCLang</span></a> <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.FlatCC.html#Complexity.NP.SAT.CookLevin.FlatCCLang"><span class="id" title="definition">FlatCCLang</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="tactic">exact</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.Reductions.FlatTCC_to_FlatCC.html#Complexity.NP.SAT.CookLevin.FlatTCC_to_FlatCC_poly"><span class="id" title="lemma">FlatTCC_to_FlatCC_poly</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="FlatCC_to_BinaryCC" class="idref" href="#FlatCC_to_BinaryCC"><span class="id" title="lemma">FlatCC_to_BinaryCC</span></a> : <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.FlatCC.html#Complexity.NP.SAT.CookLevin.FlatCCLang"><span class="id" title="definition">FlatCCLang</span></a> <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.BinaryCC.html#Complexity.NP.SAT.CookLevin.BinaryCCLang"><span class="id" title="definition">BinaryCCLang</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="tactic">exact</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.Reductions.FlatCC_to_BinaryCC.html#Complexity.NP.SAT.CookLevin.FlatCC_to_BinaryCC_poly"><span class="id" title="lemma">FlatCC_to_BinaryCC_poly</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="BinaryCC_to_FSAT" class="idref" href="#BinaryCC_to_FSAT"><span class="id" title="lemma">BinaryCC_to_FSAT</span></a> : <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.BinaryCC.html#Complexity.NP.SAT.CookLevin.BinaryCCLang"><span class="id" title="definition">BinaryCCLang</span></a> <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#FSAT"><span class="id" title="definition">FSAT</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="tactic">exact</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.Reductions.BinaryCC_to_FSAT.html#Complexity.NP.SAT.CookLevin.BinaryCC_to_FSAT_poly"><span class="id" title="lemma">BinaryCC_to_FSAT_poly</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="FSAT_to_SAT" class="idref" href="#FSAT_to_SAT"><span class="id" title="lemma">FSAT_to_SAT</span></a> : <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#FSAT"><span class="id" title="definition">FSAT</span></a> <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.SAT.SAT.html#SAT"><span class="id" title="definition">SAT</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="tactic">exact</span> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT_to_SAT.html#FSAT_to_SAT_poly"><span class="id" title="lemma">FSAT_to_SAT_poly</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="FSAT_to_3SAT" class="idref" href="#FSAT_to_3SAT"><span class="id" title="lemma">FSAT_to_3SAT</span></a> : <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#FSAT"><span class="id" title="definition">FSAT</span></a> <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.SAT.kSAT.html#kSAT"><span class="id" title="definition">kSAT</span></a> 3.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="tactic">exact</span> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT_to_SAT.html#FSAT_to_3SAT_poly"><span class="id" title="lemma">FSAT_to_3SAT_poly</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="kSAT_to_FlatClique" class="idref" href="#kSAT_to_FlatClique"><span class="id" title="lemma">kSAT_to_FlatClique</span></a> <a id="k:8" class="idref" href="#k:8"><span class="id" title="binder">k</span></a>: <a class="idref" href="Complexity.NP.SAT.kSAT.html#kSAT"><span class="id" title="definition">kSAT</span></a> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#k:8"><span class="id" title="variable">k</span></a> <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.Clique.FlatClique.html#FlatClique"><span class="id" title="definition">FlatClique</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.Clique.kSAT_to_FlatClique.html#kSAT_to_FlatClique_poly"><span class="id" title="lemma">kSAT_to_FlatClique_poly</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Corollary</span> <a id="FlatSingleTMGenNP_to_3SAT" class="idref" href="#FlatSingleTMGenNP_to_3SAT"><span class="id" title="lemma">FlatSingleTMGenNP_to_3SAT</span></a> : <a class="idref" href="Complexity.NP.SAT.CookLevin.Subproblems.SingleTMGenNP.html#Complexity.NP.SAT.CookLevin.FlatSingleTMGenNP"><span class="id" title="definition">FlatSingleTMGenNP</span></a> <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.SAT.kSAT.html#kSAT"><span class="id" title="definition">kSAT</span></a> 3.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_transitive"><span class="id" title="lemma">reducesPolyMO_transitive</span></a>.<br/>
+&nbsp;&nbsp;2: <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#FSAT_to_3SAT"><span class="id" title="lemma">FSAT_to_3SAT</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_transitive"><span class="id" title="lemma">reducesPolyMO_transitive</span></a>.<br/>
+&nbsp;&nbsp;2: <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#BinaryCC_to_FSAT"><span class="id" title="lemma">BinaryCC_to_FSAT</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_transitive"><span class="id" title="lemma">reducesPolyMO_transitive</span></a>.<br/>
+&nbsp;&nbsp;2: <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#FlatCC_to_BinaryCC"><span class="id" title="lemma">FlatCC_to_BinaryCC</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_transitive"><span class="id" title="lemma">reducesPolyMO_transitive</span></a>.<br/>
+&nbsp;&nbsp;2: <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#FlatTCC_to_FlatCC"><span class="id" title="lemma">FlatTCC_to_FlatCC</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#FlatSingleTMGenNP_to_FlatTCC"><span class="id" title="lemma">FlatSingleTMGenNP_to_FlatTCC</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Corollary</span> <a id="GenNP_to_3SAT" class="idref" href="#GenNP_to_3SAT"><span class="id" title="lemma">GenNP_to_3SAT</span></a> : <a class="idref" href="Complexity.NP.L.GenNP.html#GenNP"><span class="id" title="definition">GenNP</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#bool"><span class="id" title="inductive">bool</span></a>) <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.SAT.kSAT.html#kSAT"><span class="id" title="definition">kSAT</span></a> 3.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_transitive"><span class="id" title="lemma">reducesPolyMO_transitive</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#GenNP_to_SingleTMGenNP"><span class="id" title="lemma">GenNP_to_SingleTMGenNP</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#FlatSingleTMGenNP_to_3SAT"><span class="id" title="lemma">FlatSingleTMGenNP_to_3SAT</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <span class="id" title="var">GenNP_is_hard</span> <span class="id" title="var">CanEnumTerm</span>.<br/>
+</div>
+
+<div class="doc">
+even 3-SAT is already NP-complete. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <a id="CookLevin0" class="idref" href="#CookLevin0"><span class="id" title="lemma">CookLevin0</span></a> : <a class="idref" href="Complexity.Complexity.NP.html#NPcomplete"><span class="id" title="definition">NPcomplete</span></a> (<a class="idref" href="Complexity.NP.SAT.kSAT.html#kSAT"><span class="id" title="definition">kSAT</span></a> 3).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>. 2:<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.kSAT_to_SAT.html#inNP_kSAT"><span class="id" title="lemma">inNP_kSAT</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#red_NPhard"><span class="id" title="lemma">red_NPhard</span></a>. <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#GenNP_to_3SAT"><span class="id" title="lemma">GenNP_to_3SAT</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.L.GenNP_is_hard.html#NPhard_GenNP"><span class="id" title="lemma">NPhard_GenNP</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.NP.L.CanEnumTerm.html#boollist_enum.boollists_enum_term"><span class="id" title="lemma">boollist_enum.boollists_enum_term</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The Cook-Levin-Theorem: SAT is NP-complete. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <a id="CookLevin" class="idref" href="#CookLevin"><span class="id" title="lemma">CookLevin</span></a> : <a class="idref" href="Complexity.Complexity.NP.html#NPcomplete"><span class="id" title="definition">NPcomplete</span></a> <a class="idref" href="Complexity.NP.SAT.SAT.html#SAT"><span class="id" title="definition">SAT</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>. 2:<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.SAT.html#sat_NP"><span class="id" title="lemma">SAT.sat_NP</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#red_NPhard"><span class="id" title="lemma">red_NPhard</span></a>. <span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.NP.SAT.kSAT_to_SAT.html#kSAT_to_SAT"><span class="id" title="lemma">kSAT_to_SAT</span></a>. <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#CookLevin0"><span class="id" title="lemma">CookLevin0</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The Clique problem is also NP-complete 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <a id="Clique_complete" class="idref" href="#Clique_complete"><span class="id" title="lemma">Clique_complete</span></a> : <a class="idref" href="Complexity.Complexity.NP.html#NPcomplete"><span class="id" title="definition">NPcomplete</span></a> <a class="idref" href="Complexity.NP.Clique.FlatClique.html#FlatClique"><span class="id" title="definition">FlatClique</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#red_NPhard"><span class="id" title="lemma">red_NPhard</span></a>; [<span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#kSAT_to_FlatClique"><span class="id" title="lemma">kSAT_to_FlatClique</span></a> | <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.SAT.CookLevin.html#CookLevin0"><span class="id" title="lemma">CookLevin0</span></a>].<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.Clique.FlatClique.html#FlatClique_in_NP"><span class="id" title="lemma">FlatClique_in_NP</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

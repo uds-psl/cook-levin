@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="../">Project Page</a>
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L.Tactics</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.Tactics.LTactics.html#"><span class="id" title="library">LTactics</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L.Datatypes</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.Datatypes.LNat.html#"><span class="id" title="library">LNat</span></a> <a class="idref" href="Undecidability.L.Datatypes.Lists.html#"><span class="id" title="library">Lists</span></a> <a class="idref" href="Undecidability.L.Datatypes.LTerm.html#"><span class="id" title="library">LTerm</span></a> <a class="idref" href="Undecidability.L.Datatypes.LOptions.html#"><span class="id" title="library">LOptions</span></a> <a class="idref" href="Undecidability.L.Datatypes.LUnit.html#"><span class="id" title="library">LUnit</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L.Complexity.LinDecode</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#"><span class="id" title="library">LTD_def</span></a> <a class="idref" href="Undecidability.L.Complexity.LinDecode.LTDbool.html#"><span class="id" title="library">LTDbool</span></a> <a class="idref" href="Undecidability.L.Complexity.LinDecode.LTDlist.html#"><span class="id" title="library">LTDlist</span></a> <a class="idref" href="Undecidability.L.Complexity.LinDecode.LTDnat.html#"><span class="id" title="library">LTDnat</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.Functions.Decoding.html#"><span class="id" title="library">Functions.Decoding</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Instance</span> <a id="linDec_unit" class="idref" href="#linDec_unit"><span class="id" title="instance">linDec_unit</span></a> : <a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#linTimeDecodable"><span class="id" title="class">linTimeDecodable</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#unit"><span class="id" title="inductive">unit</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">evar</span> (<span class="id" title="var">c</span> : <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>). <span class="id" title="tactic">exists</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Undecidability.L.Functions.Decoding.html#decode"><span class="id" title="method">decode</span></a>, <a class="idref" href="Undecidability.L.Functions.Decoding.html#decode_unit"><span class="id" title="instance">decode_unit</span></a>. <span class="id" title="var">cbn</span>. <span class="id" title="var">extract</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">solverec</span>. [<span class="id" title="var">c</span>]: <span class="id" title="tactic">exact</span> 5. <span class="id" title="var">all</span>: <span class="id" title="tactic">unfold</span> <span class="id" title="var">c</span>; <span class="id" title="var">lia</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Instance</span> <a id="linDec_term" class="idref" href="#linDec_term"><span class="id" title="instance">linDec_term</span></a> : <a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#linTimeDecodable"><span class="id" title="class">linTimeDecodable</span></a> <a class="idref" href="Undecidability.L.L.html#term"><span class="id" title="inductive">term</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">evar</span> (<span class="id" title="var">c</span>:<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>). <span class="id" title="tactic">exists</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Undecidability.L.Functions.Decoding.html#decode"><span class="id" title="method">decode</span></a>,<a class="idref" href="Undecidability.L.Functions.Decoding.html#decode_term"><span class="id" title="instance">decode_term</span></a>;<span class="id" title="var">cbn</span>. <span class="id" title="var">extract</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">recRel_prettify2</span>;<span class="id" title="var">cbn</span>[<span class="id" title="var">size</span>];<span class="id" title="var">ring_simplify</span>.<br/>
+&nbsp;&nbsp;[<span class="id" title="var">c</span>]:<span class="id" title="tactic">exact</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Peano.html#max"><span class="id" title="abbreviation">max</span></a> (<a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#c__linDec"><span class="id" title="method">c__linDec</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>) 10).<br/>
+&nbsp;&nbsp;<span class="id" title="var">all</span>:<span class="id" title="tactic">unfold</span> <span class="id" title="var">c</span>;<span class="id" title="tactic">try</span> <span class="id" title="var">nia</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Instance</span> <a id="linDec_prod" class="idref" href="#linDec_prod"><span class="id" title="instance">linDec_prod</span></a> <a id="X:1" class="idref" href="#X:1"><span class="id" title="binder">X</span></a> <a id="Y:2" class="idref" href="#Y:2"><span class="id" title="binder">Y</span></a> `{<a id="H1:5" class="idref" href="#H1:5"><span class="id" title="binder">_</span></a> : <a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#linTimeDecodable"><span class="id" title="class">linTimeDecodable</span></a> <a class="idref" href="Complexity.Complexity.LinTimeDecodable.html#X:1"><span class="id" title="variable">X</span></a>} `{<a id="H4:8" class="idref" href="#H4:8"><span class="id" title="binder">_</span></a>:<a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#linTimeDecodable"><span class="id" title="class">linTimeDecodable</span></a> <a class="idref" href="Complexity.Complexity.LinTimeDecodable.html#Y:2"><span class="id" title="variable">Y</span></a>} : <a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#linTimeDecodable"><span class="id" title="class">linTimeDecodable</span></a> (<a class="idref" href="Complexity.Complexity.LinTimeDecodable.html#X:1"><span class="id" title="variable">X</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">*</span></a> <a class="idref" href="Complexity.Complexity.LinTimeDecodable.html#Y:2"><span class="id" title="variable">Y</span></a>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">evar</span> (<span class="id" title="var">c</span> : <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>). <span class="id" title="tactic">exists</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Undecidability.L.Functions.Decoding.html#decode"><span class="id" title="method">decode</span></a>, <a class="idref" href="Undecidability.L.Functions.Decoding.html#decode_prod"><span class="id" title="instance">decode_prod</span></a>, <a class="idref" href="Undecidability.L.Functions.Decoding.html#prod_decode"><span class="id" title="definition">prod_decode</span></a>; <span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">extract</span>. <span class="id" title="var">recRel_prettify2</span>; <span class="id" title="var">cbn</span> [<span class="id" title="var">size</span>]; <span class="id" title="var">ring_simplify</span>.<br/>
+&nbsp;&nbsp;[<span class="id" title="var">c</span>]: <span class="id" title="tactic">exact</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Peano.html#max"><span class="id" title="abbreviation">max</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Peano.html#max"><span class="id" title="abbreviation">max</span></a> (<a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#c__linDec"><span class="id" title="method">c__linDec</span></a> <span class="id" title="var">X</span>) (<a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#c__linDec"><span class="id" title="method">c__linDec</span></a> <span class="id" title="var">Y</span>)) 14). <span class="id" title="var">all</span>: <span class="id" title="tactic">unfold</span> <span class="id" title="var">c</span>; <span class="id" title="tactic">try</span> <span class="id" title="var">nia</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Instance</span> <a id="linDec_sum" class="idref" href="#linDec_sum"><span class="id" title="instance">linDec_sum</span></a> <a id="X:9" class="idref" href="#X:9"><span class="id" title="binder">X</span></a> <a id="Y:10" class="idref" href="#Y:10"><span class="id" title="binder">Y</span></a> `{<a id="H1:13" class="idref" href="#H1:13"><span class="id" title="binder">_</span></a> : <a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#linTimeDecodable"><span class="id" title="class">linTimeDecodable</span></a> <a class="idref" href="Complexity.Complexity.LinTimeDecodable.html#X:9"><span class="id" title="variable">X</span></a>} `{<a id="H4:16" class="idref" href="#H4:16"><span class="id" title="binder">_</span></a>:<a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#linTimeDecodable"><span class="id" title="class">linTimeDecodable</span></a> <a class="idref" href="Complexity.Complexity.LinTimeDecodable.html#Y:10"><span class="id" title="variable">Y</span></a>} : <a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#linTimeDecodable"><span class="id" title="class">linTimeDecodable</span></a> (<a class="idref" href="Complexity.Complexity.LinTimeDecodable.html#X:9"><span class="id" title="variable">X</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#e03f39daf98516fa530d3f6f5a1b4d92"><span class="id" title="notation">+</span></a> <a class="idref" href="Complexity.Complexity.LinTimeDecodable.html#Y:10"><span class="id" title="variable">Y</span></a>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">evar</span> (<span class="id" title="var">c</span> : <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>). <span class="id" title="tactic">exists</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Undecidability.L.Functions.Decoding.html#decode"><span class="id" title="method">decode</span></a>, <a class="idref" href="Undecidability.L.Functions.Decoding.html#decode_sum"><span class="id" title="instance">decode_sum</span></a>, <a class="idref" href="Undecidability.L.Functions.Decoding.html#sum_decode"><span class="id" title="definition">sum_decode</span></a>; <span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">extract</span>. <span class="id" title="var">recRel_prettify2</span>; <span class="id" title="var">cbn</span> [<span class="id" title="var">size</span>]; <span class="id" title="var">ring_simplify</span>.<br/>
+&nbsp;&nbsp;[<span class="id" title="var">c</span>]: <span class="id" title="tactic">exact</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Peano.html#max"><span class="id" title="abbreviation">max</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Peano.html#max"><span class="id" title="abbreviation">max</span></a> (<a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#c__linDec"><span class="id" title="method">c__linDec</span></a> <span class="id" title="var">X</span>) (<a class="idref" href="Undecidability.L.Complexity.LinDecode.LTD_def.html#c__linDec"><span class="id" title="method">c__linDec</span></a> <span class="id" title="var">Y</span>)) 14). <span class="id" title="var">all</span>: <span class="id" title="tactic">unfold</span> <span class="id" title="var">c</span>; <span class="id" title="tactic">try</span> <span class="id" title="var">nia</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

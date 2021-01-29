@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="../">Project Page</a>
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.L</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.Tactics.LTactics.html#"><span class="id" title="library">Tactics.LTactics</span></a> <a class="idref" href="Undecidability.L.Prelim.MoreList.html#"><span class="id" title="library">Prelim.MoreList</span></a> <a class="idref" href="Undecidability.L.Prelim.MoreBase.html#"><span class="id" title="library">Prelim.MoreBase</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity.Complexity</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.Complexity.NP.html#"><span class="id" title="library">NP</span></a> <a class="idref" href="Complexity.Complexity.Definitions.html#"><span class="id" title="library">Definitions</span></a> <a class="idref" href="Complexity.Complexity.Monotonic.html#"><span class="id" title="library">Monotonic</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity.NP</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.NP.L.GenNP.html#"><span class="id" title="library">L.GenNP</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab147"></a><h1 class="section">From L to TMs</h1>
+
+<div class="paragraph"> </div>
+
+ Start: <a id="lab148"></a><h1 class="section">This start might be bad, as we need to check the bound explicitly, e.g. count the beta-steps during the simulation.</h1>
+<a id="lab149"></a><h1 class="section">But we can choose the bound large enough such that the term we simulate halts in the bound or always diverges</h1>
+<a id="lab150"></a><h1 class="section">We might want to simulate some L term that always halts</h1>
+<a id="lab151"></a><h1 class="section">But that means we need to distinguish true/false in the representation.</h1>
+
+<div class="paragraph"> </div>
+
+<a id="lab152"></a><h1 class="section">Eventuell moechten wir nicht mit einem "einfachen" problem starten, sondern erst eienn lambda-trm scheiben, der decider für eine lang genuge zeit simulirt und dann hält oder divergiert, je nachdem ob der Decider wahr oder falsch sagt</h1>
+<a id="lab153"></a><h1 class="section">Divergenz ist ein schlechter Problem, wenn man von divergens reduziert, da man häufig nur obere schranken für die Laufzeit der Simulatoren hat.</h1>
+
+
+<div class="paragraph"> </div>
+
+Da der simulierte Term evtl aber mit groesserer Schranke haelt muesste man dann schritte mitzählen. 
+</div>
+<div class="code">
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.TM</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.TM.TM.html#"><span class="id" title="library">TM</span></a> <a class="idref" href="Undecidability.TM.Code.CodeTM.html#"><span class="id" title="library">CodeTM</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.L.Datatypes.LFinType.html#"><span class="id" title="library">LFinType</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Complexity</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Complexity.Complexity.NP.html#"><span class="id" title="library">NP</span></a> <a class="idref" href="Complexity.NP.TM.L_to_LM.html#"><span class="id" title="library">L_to_LM</span></a> <a class="idref" href="Complexity.NP.TM.LM_to_mTM.html#"><span class="id" title="library">LM_to_mTM</span></a> <a class="idref" href="Complexity.NP.TM.mTM_to_singleTapeTM.html#"><span class="id" title="library">mTM_to_singleTapeTM</span></a> <a class="idref" href="Complexity.NP.TM.TMGenNP_fixed_mTM.html#"><span class="id" title="library">TMGenNP_fixed_mTM</span></a> <a class="idref" href="Complexity.Complexity.Subtypes.html#"><span class="id" title="library">Subtypes</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <span class="id" title="var">LNat</span>.<br/>
+<span class="id" title="keyword">Lemma</span> <a id="GenNP_to_TMGenNP" class="idref" href="#GenNP_to_TMGenNP"><span class="id" title="lemma">GenNP_to_TMGenNP</span></a>:<br/>
+&nbsp;&nbsp;<a class="idref" href="Complexity.NP.L.GenNP.html#GenNP"><span class="id" title="definition">GenNP</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#bool"><span class="id" title="inductive">bool</span></a>) <a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">⪯</span></a><a class="idref" href="Complexity.Complexity.NP.html#83857b334b98b5cd74690c289f344c80"><span class="id" title="notation">p</span></a> <a class="idref" href="Complexity.NP.TM.TMGenNP_fixed_mTM.html#TMGenNP_fixed"><span class="id" title="definition">TMGenNP_fixed</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#projT1"><span class="id" title="definition">projT1</span></a> (<a class="idref" href="Complexity.NP.TM.M_multi2mono.html#M__mono"><span class="id" title="definition">M_multi2mono.M__mono</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Specif.html#projT1"><span class="id" title="definition">projT1</span></a> <a class="idref" href="Complexity.NP.TM.LM_to_mTM.html#M.M"><span class="id" title="definition">M.M</span></a>))).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_transitive"><span class="id" title="lemma">reducesPolyMO_transitive</span></a>. <span class="id" title="var">now</span> <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.TM.L_to_LM.html#GenNP_to_LMGenNP"><span class="id" title="lemma">GenNP_to_LMGenNP</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Complexity.Complexity.NP.html#reducesPolyMO_transitive"><span class="id" title="lemma">reducesPolyMO_transitive</span></a>. <span class="id" title="var">now</span> <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.TM.LM_to_mTM.html#LMGenNP_to_TMGenNP_mTM"><span class="id" title="lemma">LMGenNP_to_TMGenNP_mTM</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">now</span> <span class="id" title="tactic">apply</span> <a class="idref" href="Complexity.NP.TM.mTM_to_singleTapeTM.html#TMGenNP_mTM_to_TMGenNP_singleTM"><span class="id" title="lemma">TMGenNP_mTM_to_TMGenNP_singleTM</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Not Complete: nice form of Time bound 
+</div>
+<div class="code">
+
+<br/>
+</div>
+
+<div class="doc">
+Approach: simulate step-indexed L interpreter inside TM  Problems: Well-formedness of certificate-input? 
+<div class="paragraph"> </div>
+
+ Maybe intermediate problem in terms of Heap-Machine? 
+</div>
+<div class="code">
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="../">Project Page</a>
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Undecidability.TM.L.CompilerBoolFuns</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler_spec.html#"><span class="id" title="library">Compiler_spec</span></a> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler_facts.html#"><span class="id" title="library">Compiler_facts</span></a> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler.html#"><span class="id" title="library">Compiler</span></a> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.ClosedLAdmissible.html#"><span class="id" title="library">ClosedLAdmissible</span></a> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler_nat_facts.html#"><span class="id" title="library">Compiler_nat_facts</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="L_bool_computable_to_TM_bool_computable" class="idref" href="#L_bool_computable_to_TM_bool_computable"><span class="id" title="lemma">L_bool_computable_to_TM_bool_computable</span></a> <a id="k:1" class="idref" href="#k:1"><span class="id" title="binder">k</span></a> (<a id="R:2" class="idref" href="#R:2"><span class="id" title="binder">R</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Vectors.Vector.html#t"><span class="id" title="inductive">Vector.t</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#bool"><span class="id" title="inductive">bool</span></a>) <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.LComp_to_TMComp.html#k:1"><span class="id" title="variable">k</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#bool"><span class="id" title="inductive">bool</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="keyword">Prop</span>) :<br/>
+&nbsp;&nbsp;<a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler_spec.html#L_bool_computable"><span class="id" title="definition">L_bool_computable</span></a> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.LComp_to_TMComp.html#R:2"><span class="id" title="variable">R</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler_spec.html#TM_bool_computable"><span class="id" title="definition">TM_bool_computable</span></a> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.LComp_to_TMComp.html#R:2"><span class="id" title="variable">R</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>. <span class="id" title="tactic">eapply</span> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler_facts.html#TM_bool_computable_hoare'_spec"><span class="id" title="lemma">TM_bool_computable_hoare'_spec</span></a>.<br/>
+&nbsp;&nbsp;-<span class="id" title="var">now</span> <span class="id" title="tactic">apply</span> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler_facts.html#L_bool_computable_function"><span class="id" title="lemma">L_bool_computable_function</span></a>.<br/>
+&nbsp;&nbsp;-<span class="id" title="var">now</span> <span class="id" title="tactic">eapply</span> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler.html#compiler_correct"><span class="id" title="lemma">compiler_correct</span></a>, <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.ClosedLAdmissible.html#L_bool_computable_can_closed"><span class="id" title="lemma">L_bool_computable_can_closed</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="L_computable_to_TM_computable" class="idref" href="#L_computable_to_TM_computable"><span class="id" title="lemma">L_computable_to_TM_computable</span></a> <a id="k:3" class="idref" href="#k:3"><span class="id" title="binder">k</span></a> (<a id="R:4" class="idref" href="#R:4"><span class="id" title="binder">R</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Vectors.Vector.html#t"><span class="id" title="inductive">Vector.t</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.LComp_to_TMComp.html#k:3"><span class="id" title="variable">k</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="keyword">Prop</span>) :<br/>
+&nbsp;&nbsp;<a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler_spec.html#L_computable"><span class="id" title="definition">L_computable</span></a> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.LComp_to_TMComp.html#R:4"><span class="id" title="variable">R</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler_spec.html#TM_computable"><span class="id" title="definition">TM_computable</span></a> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.LComp_to_TMComp.html#R:4"><span class="id" title="variable">R</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler_nat_facts.html#TM_bool_computable_to_TM_computable"><span class="id" title="lemma">TM_bool_computable_to_TM_computable</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.LComp_to_TMComp.html#L_bool_computable_to_TM_bool_computable"><span class="id" title="lemma">L_bool_computable_to_TM_bool_computable</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="Undecidability.TM.L.CompilerBoolFuns.Compiler_nat_facts.html#L_computable_to_L_bool_computable"><span class="id" title="lemma">L_computable_to_L_bool_computable</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <span class="id" title="var">H</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>
