@@ -1,4 +1,3 @@
 [submodule "coq-library-undecidability"]
 	path = coq-library-undecidability
-	url = git@github.com:fakusb/coq-library-undecidability.git
-	branch = Compiler_L_TM
+	url = https://github.com/fakusb/coq-library-undecidability.git
