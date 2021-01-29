@@ -15,7 +15,7 @@ make deps
 make all
 ````
 
-The compiled documentation can be found [here](https://uds-psl.github.io/cook-levin/website/toc.html) or in the `website` subdirectory of this repository.
+The compiled documentation can be entered [here](https://uds-psl.github.io/cook-levin/website/Complexity.NP.SAT.CookLevin.html#CookLevin) or in the `./website/Complexity.NP.SAT.CookLevin.html` file of this repository.
 
 
 # The Coq Library of Complexity Theory
