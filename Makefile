@@ -3,6 +3,7 @@ all: Makefile.coq
 
 
 deps:
+	git submodule init
 	git submodule update  
 	opam install ./coq-library-undecidability --deps-only
 
