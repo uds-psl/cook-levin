@@ -5,6 +5,12 @@ This repository contains the Coq formalisation of the paper "Mechanising Complex
 
 ## How to compile the code
 Assuming `opam` is installed, you can build the necessary dependencies and the code itself as follows:
+First, create a fresh opam switch and add the Coq repo:
+````
+opam switch create cook-levin 4.07.1+flambda
+eval $(opam env)
+opam repo add coq-released https://coq.inria.fr/opam/released
+````
 
 Clone the repository, checkout the submodule containing the copy of the [Coq Library of Undecidability Proofs](https://github.com/uds-psl/coq-library-undecidability), use `opam` to install all dependencies in the current switch, and then build using `make`:
 
