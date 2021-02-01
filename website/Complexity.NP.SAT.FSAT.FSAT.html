@@ -36,7 +36,7 @@
 </div>
 
 <div class="doc">
-<a id="lab79"></a><h1 class="section">Formula Satisfiability: the satisfiability problem on arbitrary Boolean formulas</h1>
+<a id="lab78"></a><h1 class="section">Formula Satisfiability: the satisfiability problem on arbitrary Boolean formulas</h1>
 
 </div>
 <div class="code">
@@ -97,7 +97,7 @@ assignments: we list the variables which are assigned the value true; all other 
 <span class="id" title="keyword">Proof</span>. <span class="id" title="var">cbn</span>. <span class="id" title="tactic">rewrite</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Bool.Bool.html#negb_true_iff"><span class="id" title="lemma">negb_true_iff</span></a>. <span class="id" title="tactic">split</span>; <span class="id" title="tactic">eauto</span>. <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Lemma</span> <a id="evalFormula_prim_iff" class="idref" href="#evalFormula_prim_iff"><span class="id" title="lemma">evalFormula_prim_iff</span></a> <a id="a:18" class="idref" href="#a:18"><span class="id" title="binder">a</span></a> <a id="v:19" class="idref" href="#v:19"><span class="id" title="binder">v</span></a> : <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#evalFormula"><span class="id" title="definition">evalFormula</span></a> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#a:18"><span class="id" title="variable">a</span></a> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#v:19"><span class="id" title="variable">v</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#true"><span class="id" title="constructor">true</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">&lt;-&gt;</span></a> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#v:19"><span class="id" title="variable">v</span></a> <span class="id" title="notation">el</span> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#a:18"><span class="id" title="variable">a</span></a>.<br/>
+<span class="id" title="keyword">Lemma</span> <a id="evalFormula_prim_iff" class="idref" href="#evalFormula_prim_iff"><span class="id" title="lemma">evalFormula_prim_iff</span></a> <a id="a:18" class="idref" href="#a:18"><span class="id" title="binder">a</span></a> <a id="v:19" class="idref" href="#v:19"><span class="id" title="binder">v</span></a> : <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#evalFormula"><span class="id" title="definition">evalFormula</span></a> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#a:18"><span class="id" title="variable">a</span></a> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#v:19"><span class="id" title="variable">v</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#true"><span class="id" title="constructor">true</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">&lt;-&gt;</span></a> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#v:19"><span class="id" title="variable">v</span></a> <a class="idref" href="Undecidability.Shared.Libs.PSL.Lists.BaseLists.html#:::x_'el'_x"><span class="id" title="notation">el</span></a> <a class="idref" href="Complexity.NP.SAT.FSAT.FSAT.html#a:18"><span class="id" title="variable">a</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>. <span class="id" title="var">cbn</span>. <span class="id" title="tactic">unfold</span> <a class="idref" href="Complexity.NP.SAT.SharedSAT.html#evalVar"><span class="id" title="definition">evalVar</span></a>. <span class="id" title="tactic">rewrite</span> <a class="idref" href="Undecidability.L.Datatypes.List.List_in.html#list_in_decb_iff"><span class="id" title="lemma">list_in_decb_iff</span></a>; [<span class="id" title="var">easy</span> | <span class="id" title="tactic">intros</span> ]. <span class="id" title="var">now</span> <span class="id" title="tactic">rewrite</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Arith.PeanoNat.html#Nat.eqb_eq"><span class="id" title="lemma">Nat.eqb_eq</span></a>. <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
@@ -190,7 +190,7 @@ size of formulas
 </div>
 
 <div class="doc">
-<a id="lab80"></a><h2 class="section">extraction</h2>
+<a id="lab79"></a><h2 class="section">extraction</h2>
 
 </div>
 <div class="code">

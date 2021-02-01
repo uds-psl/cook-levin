@@ -33,7 +33,7 @@
 </div>
 
 <div class="doc">
-<a id="lab31"></a><h2 class="section">Abstract Heap Machine</h2>
+<a id="lab30"></a><h2 class="section">Abstract Heap Machine</h2>
 
 </div>
 <div class="code">
@@ -53,7 +53,7 @@
 </div>
 
 <div class="doc">
-<a id="lab32"></a><h3 class="section">Heaps</h3>
+<a id="lab31"></a><h3 class="section">Heaps</h3>
 
 </div>
 <div class="code">
@@ -61,7 +61,7 @@
 <br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Let</span> <a id="Lin.Heap" class="idref" href="#Lin.Heap"><span class="id" title="variable">Heap</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#heapEntry"><span class="id" title="inductive">heapEntry</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Implicit</span> <span class="id" title="keyword">Type</span> <span class="id" title="var">H</span> : <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#Lin.Heap"><span class="id" title="variable">Heap</span></a>.<br/>
-&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="put" class="idref" href="#put"><span class="id" title="definition">put</span></a> <a id="H:8" class="idref" href="#H:8"><span class="id" title="binder">H</span></a> <a id="e:9" class="idref" href="#e:9"><span class="id" title="binder">e</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">(</span></a><a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#H:8"><span class="id" title="variable">H</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#bc347c51eaf667706ae54503b26d52c6"><span class="id" title="notation">++</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">[</span></a><a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#e:9"><span class="id" title="variable">e</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">]</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">,</span></a><span class="id" title="notation">|</span><a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#H:8"><span class="id" title="variable">H</span></a><span class="id" title="notation">|</span><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">)</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="put" class="idref" href="#put"><span class="id" title="definition">put</span></a> <a id="H:8" class="idref" href="#H:8"><span class="id" title="binder">H</span></a> <a id="e:9" class="idref" href="#e:9"><span class="id" title="binder">e</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">(</span></a><a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#H:8"><span class="id" title="variable">H</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#bc347c51eaf667706ae54503b26d52c6"><span class="id" title="notation">++</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">[</span></a><a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#e:9"><span class="id" title="variable">e</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">]</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">,</span></a><a class="idref" href="Undecidability.Shared.Libs.PSL.Lists.BaseLists.html#2f6c87336e29315167850836a92a6885"><span class="id" title="notation">|</span></a><a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#H:8"><span class="id" title="variable">H</span></a><a class="idref" href="Undecidability.Shared.Libs.PSL.Lists.BaseLists.html#2f6c87336e29315167850836a92a6885"><span class="id" title="notation">|</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">)</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="get" class="idref" href="#get"><span class="id" title="definition">get</span></a> <a id="H:10" class="idref" href="#H:10"><span class="id" title="binder">H</span></a> <a id="alpha:11" class="idref" href="#alpha:11"><span class="id" title="binder">alpha</span></a>:= <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Lists.List.html#nth_error"><span class="id" title="definition">nth_error</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#H:10"><span class="id" title="variable">H</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#alpha:11"><span class="id" title="variable">alpha</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="extended" class="idref" href="#extended"><span class="id" title="definition">extended</span></a> <a id="H:12" class="idref" href="#H:12"><span class="id" title="binder">H</span></a> <a id="H':13" class="idref" href="#H':13"><span class="id" title="binder">H'</span></a> := <span class="id" title="keyword">forall</span> <a id="alpha:14" class="idref" href="#alpha:14"><span class="id" title="binder">alpha</span></a> <a id="m:15" class="idref" href="#m:15"><span class="id" title="binder">m</span></a>, <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#get"><span class="id" title="definition">get</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#H:12"><span class="id" title="variable">H</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#alpha:14"><span class="id" title="variable">alpha</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#Some"><span class="id" title="constructor">Some</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#m:15"><span class="id" title="variable">m</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#get"><span class="id" title="definition">get</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#H':13"><span class="id" title="variable">H'</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#alpha:14"><span class="id" title="variable">alpha</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.12.1/stdlib//Coq.Init.Datatypes.html#Some"><span class="id" title="constructor">Some</span></a> <a class="idref" href="Complexity.L.AbstractMachines.AbstractHeapMachineDef.html#m:15"><span class="id" title="variable">m</span></a>.<br/>
 
@@ -82,7 +82,7 @@
 </div>
 
 <div class="doc">
-<a id="lab33"></a><h3 class="section">Reduction Rules</h3>
+<a id="lab32"></a><h3 class="section">Reduction Rules</h3>
 
 </div>
 <div class="code">
@@ -114,7 +114,7 @@
 </div>
 
 <div class="doc">
-<a id="lab34"></a><h3 class="section">Unfolding</h3>
+<a id="lab33"></a><h3 class="section">Unfolding</h3>
 
 </div>
 <div class="code">
