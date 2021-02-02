@@ -4,7 +4,7 @@ Lennard Gäher <gaeher@mpi-sws.org>, Fabian Kunze <fabian.kunze@cs.uni-saarland.
 This repository contains the Coq formalisation of the paper "Mechanising Complexity Theory: The Cook-Levin Theorem in Coq".
 
 ## How to compile the code
-Assuming coq 8.12.1 and `opam` is installed, you can build the necessary dependencies and the code itself as follows:
+Assuming coq 8.12.1 is [installed via `opam`](https://coq.inria.fr/opam-using.html), and coq-released is added as opam repository (`opam repo add coq-released https://coq.inria.fr/opam/released`), you can build the necessary dependencies and the code itself as follows:
 First, create a fresh opam switch and add the Coq repo:
 ````
 opam switch create cook-levin 4.07.1+flambda
