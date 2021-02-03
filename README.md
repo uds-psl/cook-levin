@@ -4,7 +4,8 @@ Lennard Gäher <gaeher@mpi-sws.org>, Fabian Kunze <fabian.kunze@cs.uni-saarland.
 This repository contains the Coq formalisation of the paper "Mechanising Complexity Theory: The Cook-Levin Theorem in Coq".
 
 ## How to compile the code
-Assuming `opam` is installed, you can build the necessary dependencies and the code itself as follows:
+Assuming opam is installed, you can build the necessary dependencies and the code itself as follows:
+
 First, create a fresh opam switch and add the Coq repo:
 ````
 opam switch create cook-levin 4.07.1+flambda
@@ -12,7 +13,7 @@ eval $(opam env)
 opam repo add coq-released https://coq.inria.fr/opam/released
 ````
 
-Clone the repository, checkout the submodule containing the copy of the [Coq Library of Undecidability Proofs](https://github.com/uds-psl/coq-library-undecidability), use `opam` to install all dependencies in the current switch, and then build using `make`:
+Clone the repository, checkout the submodule containing the copy of the [Coq Library of Undecidability Proofs](https://github.com/uds-psl/coq-library-undecidability), use `opam` to install all dependencies, including the right of Coq, in the current switch, and then build using `make`:
 
 ````
 git clone https://github.com/uds-psl/cook-levin.git
